@@ -1,6 +1,4 @@
-package dashboard;
-
-import java.io.Serializable;
+package sandbox;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -8,15 +6,16 @@ import javax.inject.Named;
 
 import abstractbean.AbstractBean;
 
+
 @Named
 @ViewScoped
-public class DashboardBean extends AbstractBean {
+public class FormularBean extends AbstractBean {
 	
-	private String greeting;
+private String greeting;
 	
 	@PostConstruct
 	public void init() {
-		this.greeting = "Hello Primefaces 8";
+		this.greeting = "Hello Formular Sandbox";
 	}
 
 	public String getGreeting() {
@@ -26,8 +25,5 @@ public class DashboardBean extends AbstractBean {
 	public void setGreeting(String greeting) {
 		this.greeting = greeting;
 	}
-	
-	
-	
-	
+
 }

@@ -1,25 +1,21 @@
-<ui:composition
-xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/resources/templates/standardTemplate.xhtml">
-<ui:define name="header">
+	<ui:define name="header">
 		<h1>
-			<p:outputLabel value="#{dashboardBean.greeting}" />
+			<p:outputLabel value="#{formularBean.greeting}" />
+
 		</h1>
 	</ui:define>
 	<ui:define name="navigation">
+		<p:link outcome="home" value="Home" />
 	</ui:define>
 	<ui:define name="content">
-	<p:link outcome="formular" value="Formular"/>
-	<h:form>
-	<p:commandLink ajax="false" action="#{dashboardBean.redirect('formular')}">
-            <h:outputText value="Formular"/>
-        </p:commandLink>
-        </h:form>
+	Formular
 	</ui:define>
 	<ui:define name="footer">
 	Footer
