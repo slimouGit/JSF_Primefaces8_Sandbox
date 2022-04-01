@@ -1,12 +1,12 @@
-<ui:composition
-xmlns="http://www.w3.org/1999/xhtml"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
 	template="/WEB-INF/resources/templates/standardTemplate.xhtml">
-<ui:define name="header">
+	<ui:define name="header">
 		<h1>
 			<p:outputLabel value="#{dashboardBean.greeting}" />
 		</h1>
@@ -14,12 +14,17 @@ xmlns="http://www.w3.org/1999/xhtml"
 	<ui:define name="navigation">
 	</ui:define>
 	<ui:define name="content">
-	<p:link outcome="formular" value="Formular"/>
-	<h:form>
-	<p:commandLink ajax="false" action="#{dashboardBean.redirect('formular')}">
-            <h:outputText value="Formular"/>
-        </p:commandLink>
-        </h:form>
+		<p:link outcome="formular" value="Formular" />
+		<h:form>
+			<ui:repeat var="item" value="#{dashboardBean.navigation}">
+			<div>
+				<p:commandLink ajax="false"
+					action="#{dashboardBean.redirect(item.target)}">
+					<h:outputText value="#{item.name}" />
+				</p:commandLink>
+				</div>
+			</ui:repeat>
+		</h:form>
 	</ui:define>
 	<ui:define name="footer">
 	Footer
