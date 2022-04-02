@@ -1,0 +1,58 @@
+#dropdown-teaser .ui-accordion .ui-accordion-header > .ui-icon {
+  position: static;
+  display: inline-block;
+  margin: 0 0.5rem 0 0;
+}
+
+#dropdown-teaser .ui-accordion .ui-accordion-header {
+  border: 1px solid #dee2e6;
+  border-top: 0 none;
+  background: #f8f9fa;
+  color: #495057;
+  padding: 1rem 10px;
+  font-weight: 700;
+  margin-top: 0;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  user-select: none;
+  border-radius: 0;
+  position: relative;
+  outline: 0 none;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header:first-child {
+  margin-top: 0;
+  border-top: 1px solid #dee2e6;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header.ui-accordion-header-last {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header.ui-accordion-header-last.ui-state-active {
+  border-radius: 0;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header.ui-state-hover {
+  border-color: #dee2e6;
+  background: #e9ecef;
+  color: #495057;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header.ui-state-active {
+  border-color: #dee2e6;
+  background: #f8f9fa;
+  color: #495057;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header.ui-state-active:hover {
+  border-color: #dee2e6;
+  background: #e9ecef;
+  color: #495057;
+}
+#dropdown-teaser .ui-accordion .ui-accordion-header:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #a6d5fa;
+}
+
+#dropdown-teaser .ui-accordion .ui-accordion-content {
+	padding: 0em 2.2em;
+}
+
