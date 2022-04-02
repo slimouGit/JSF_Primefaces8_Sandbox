@@ -21,6 +21,8 @@ public class DashboardBean extends AbstractBean {
 	@Inject
 	private NavigationTargetService navigationTargetService;
 	
+	
+	
 	@PostConstruct
 	public void init() {
 		this.greeting = "Hello Primefaces 8";
@@ -46,6 +48,8 @@ public class DashboardBean extends AbstractBean {
 	public void setNavigation(List<NavigationTarget> navigation) {
 		this.navigation = navigation;
 	}
+
+	
 	
 	
 	

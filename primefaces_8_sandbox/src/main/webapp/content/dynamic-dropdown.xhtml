@@ -15,22 +15,66 @@
 		<p:link outcome="home" value="Home" />
 	</ui:define>
 	<ui:define name="content">
-	<h:form id="dropdown-teaser" class="dropdown-teaser" >
-	<div class="card">
-        <p:accordionPanel widgetVar="teaser">
-            <p:tab title="dynamic dropdown">
-                <p class="p-m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </p:tab>
-        </p:accordionPanel>
-    </div>
-	</h:form>
+		<h:form id="dropdown-teaser">
+			<div class="card">
+				<p:accordionPanel widgetVar="teaser" activeIndex="">
+					<p:tab title="dynamic dropdown">
+						<p class="p-m-0">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate
+							velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+							occaecat cupidatat non proident, sunt in culpa qui officia
+							deserunt mollit anim id est laborum.</p>
+					</p:tab>
+				</p:accordionPanel>
+			</div>
+		</h:form>
+		<h:form id="vehicle-dropdown">
+			
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel for="vehicle" value="Vehicle: " />
+				<p:selectOneMenu id="vehicle"
+					value="#{dynamicDropdownBean.selectedVehicleType}"
+					style="width:150px">
+					<p:ajax listener="#{dynamicDropdownBean.onVehicleChange}"
+						update="selected-vehicle-form" />
+					<f:selectItem itemLabel="Select Vehicle" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{dynamicDropdownBean.vehicleTypeList}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+		</h:form>
+		<h:form id="selected-vehicle-form">
+			<div>
+				<ui:fragment id="selected-vehicle"
+					rendered="#{not empty dynamicDropdownBean.selectedVehicleType}">
+					<h:panelGrid columns="2" cellpadding="5">
+						<p:outputLabel value="Your Selection:" />
+						<p:outputLabel value="#{dynamicDropdownBean.selectedVehicleType}" />
+					</h:panelGrid>
+				</ui:fragment>
+			</div>
+			<div>
+				<h:panelGrid columns="1" cellpadding="5">
+				<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+					<ui:fragment rendered="#{dynamicDropdownBean.car}">
+						<p:outputLabel value="Car-Form" />
+					</ui:fragment>
+					<ui:fragment rendered="#{dynamicDropdownBean.motorcycle}">
+						<p:outputLabel value="MotorCycle-Form" />
+					</ui:fragment>
+					<ui:fragment rendered="#{dynamicDropdownBean.truck}">
+						<p:outputLabel value="Truck-Form" />
+					</ui:fragment>
+					<p:commandButton value="Submit" update="msgs"
+						action="#{dynamicDropdownBean.displayVehicle}"/>
+				</h:panelGrid>
+			</div>
+		</h:form>
 	</ui:define>
 	<ui:define name="footer">
-	Footer
 	</ui:define>
 </ui:composition>
 
