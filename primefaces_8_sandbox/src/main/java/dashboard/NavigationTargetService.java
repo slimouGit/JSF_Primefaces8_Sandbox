@@ -12,7 +12,7 @@ public class NavigationTargetService {
 	public List<NavigationTarget> generateNavigationTargetList() {	
 		return new ArrayList<NavigationTarget>(Arrays.asList(
 				new NavigationTarget("dynamic-dropdown", "Dynamic Dropdown"),
-				new NavigationTarget("dynamic-dropdown", "Test")
+				new NavigationTarget("gridlayout", "Gridlayout")
 				));
 	}
 

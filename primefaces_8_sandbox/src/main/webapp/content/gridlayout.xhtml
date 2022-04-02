@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/resources/templates/subside.xhtml">
+	<ui:define name="pagetitle">Gridlayout</ui:define>
+	<ui:define name="header">
+		<h1>
+			<p:outputLabel value="#{gridlayoutBean.greeting}" />
+		</h1>
+	</ui:define>
+	<ui:define name="navigation">
+		<p:link outcome="home" value="Home" />
+	</ui:define>
+	<ui:define name="content">
+		<p:outputLabel value="I am the content"/>
+	</ui:define>
+	<ui:define name="footer">
+		<p:outputLabel value="I am the footer"/>
+	</ui:define>
+</ui:composition>
+
