@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<ui:decorate template="head.xhtml" />
+<h:body>
+	<div id="header">
+		<h1>
+			<t:insert name="header">HEADER</t:insert>
+		</h1>
+	</div>
+	<div id="navigation">
+		<t:insert name="navigation"> NAVIGATION </t:insert>
+	</div>
+	<ui:insert name="mainContent" />
+
+</h:body>
+</html>

@@ -4,7 +4,8 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	template="/WEB-INF/resources/templates/masterTemplate.xhtml">
+	template="/WEB-INF/resources/templates/master.xhtml">
+	<ui:define name="pagetitle">Primefaces Sandbox</ui:define>
 	<ui:define name="header">
 		<h1>
 			<p:outputLabel value="#{dashboardBean.greeting}" />
@@ -21,12 +22,6 @@
 				</div>
 			</ui:repeat>
 		</h:form>
-	</ui:define>
-	<ui:define name="content">
-
-	</ui:define>
-	<ui:define name="footer">
-	Footer
 	</ui:define>
 </ui:composition>
 

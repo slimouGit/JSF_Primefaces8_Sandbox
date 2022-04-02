@@ -4,11 +4,11 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
-	template="/WEB-INF/resources/templates/dropdownTemplate.xhtml">
+	template="/WEB-INF/resources/templates/subside.xhtml">
+	<ui:define name="pagetitle">Dropdown</ui:define>
 	<ui:define name="header">
 		<h1>
 			<p:outputLabel value="#{dynamicDropdownBean.greeting}" />
-
 		</h1>
 	</ui:define>
 	<ui:define name="navigation">
@@ -32,7 +32,7 @@
 			</div>
 		</h:form>
 		<h:form id="vehicle-dropdown">
-			
+
 			<h:panelGrid columns="2" cellpadding="5">
 				<p:outputLabel for="vehicle" value="Vehicle: " />
 				<p:selectOneMenu id="vehicle"
@@ -58,7 +58,8 @@
 			</div>
 			<div>
 				<h:panelGrid columns="1" cellpadding="5">
-				<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+					<p:growl id="msgs" showDetail="true"
+						skipDetailIfEqualsSummary="true" />
 					<ui:fragment rendered="#{dynamicDropdownBean.car}">
 						<p:outputLabel value="Car-Form" />
 					</ui:fragment>
@@ -69,12 +70,13 @@
 						<p:outputLabel value="Truck-Form" />
 					</ui:fragment>
 					<p:commandButton value="Submit" update="msgs"
-						action="#{dynamicDropdownBean.displayVehicle}"/>
+						action="#{dynamicDropdownBean.displayVehicle}" />
 				</h:panelGrid>
 			</div>
 		</h:form>
 	</ui:define>
 	<ui:define name="footer">
+		<p:outputLabel value="I am the footer"/>
 	</ui:define>
 </ui:composition>
 

@@ -8,10 +8,6 @@
 		<navigation-case>
 			<from-outcome>home</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>formular</from-outcome>
-			<to-view-id>/content/dynamic-dropdown.xhtml</to-view-id>
-		</navigation-case>		
+		</navigation-case>	
 	</navigation-rule>
 </faces-config>

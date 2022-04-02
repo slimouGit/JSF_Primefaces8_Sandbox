@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="master.xhtml">
+	<ui:define name="mainContent">
+		<div id="content">
+			<t:insert name="content"> CONTENT </t:insert>
+		</div>
+		<div id="footer">
+			<t:insert name="footer">
+				FOOTER
+			</t:insert>
+		</div>
+	</ui:define>
+</ui:composition>
