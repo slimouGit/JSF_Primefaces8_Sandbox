@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import abstractbean.AbstractBean;
@@ -17,11 +18,13 @@ public class DashboardBean extends AbstractBean {
 	private String greeting;
 	private List<NavigationTarget> navigation = new ArrayList<>();
 	
+	@Inject
+	private NavigationTargetService navigationTargetService;
+	
 	@PostConstruct
 	public void init() {
 		this.greeting = "Hello Primefaces 8";
-		this.navigation.add(new NavigationTarget("formular", "Formular"));
-		this.navigation.add(new NavigationTarget("formular", "Test"));
+		this.navigation = this.navigationTargetService.generateNavigationTargetList();
 	}
 	
 	public String redirect(String target) {

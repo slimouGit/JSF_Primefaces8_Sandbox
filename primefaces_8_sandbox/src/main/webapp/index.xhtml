@@ -12,19 +12,19 @@
 		</h1>
 	</ui:define>
 	<ui:define name="navigation">
-	</ui:define>
-	<ui:define name="content">
-		<p:link outcome="formular" value="Formular" />
 		<h:form>
 			<ui:repeat var="item" value="#{dashboardBean.navigation}">
-			<div>
-				<p:commandLink ajax="false"
-					action="#{dashboardBean.redirect(item.target)}">
-					<h:outputText value="#{item.name}" />
-				</p:commandLink>
+				<div>
+					<p:commandLink ajax="false"
+						action="#{dashboardBean.redirect(item.target)}">
+						<h:outputText value="#{item.name}" />
+					</p:commandLink>
 				</div>
 			</ui:repeat>
 		</h:form>
+	</ui:define>
+	<ui:define name="content">
+
 	</ui:define>
 	<ui:define name="footer">
 	Footer

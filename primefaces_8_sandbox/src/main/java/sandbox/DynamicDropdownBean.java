@@ -9,13 +9,13 @@ import abstractbean.AbstractBean;
 
 @Named
 @ViewScoped
-public class FormularBean extends AbstractBean {
+public class DynamicDropdownBean extends AbstractBean {
 	
 private String greeting;
 	
 	@PostConstruct
 	public void init() {
-		this.greeting = "Hello Formular Sandbox";
+		this.greeting = "dynamic dropdown";
 	}
 
 	public String getGreeting() {
