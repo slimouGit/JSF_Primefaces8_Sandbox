@@ -19,7 +19,7 @@ public class DynamicDropdownBean extends AbstractBean {
 	@Inject
 	private VehicleTypeService vehicleTypeService;
 
-	private String greeting;
+	private String title;
 	private String selectedVehicleType;
 	private List<String> vehicleTypeList = new ArrayList<>();
 	private boolean car;
@@ -28,7 +28,7 @@ public class DynamicDropdownBean extends AbstractBean {
 
 	@PostConstruct
 	public void init() {
-		this.greeting = "dynamic dropdown";
+		this.title = "dynamic dropdown";
 		this.vehicleTypeList = this.vehicleTypeService.generateVehicleList();
 	}
 
@@ -60,12 +60,14 @@ public class DynamicDropdownBean extends AbstractBean {
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
-	public String getGreeting() {
-		return greeting;
+	
+
+	public String getTitle() {
+		return title;
 	}
 
-	public void setGreeting(String greeting) {
-		this.greeting = greeting;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public List<String> getVehicleTypeList() {

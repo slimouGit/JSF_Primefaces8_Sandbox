@@ -15,7 +15,7 @@ import abstractbean.AbstractBean;
 @ViewScoped
 public class DashboardBean extends AbstractBean {
 	
-	private String greeting;
+	private String title;
 	private List<NavigationTarget> navigation = new ArrayList<>();
 	
 	@Inject
@@ -25,22 +25,22 @@ public class DashboardBean extends AbstractBean {
 	
 	@PostConstruct
 	public void init() {
-		this.greeting = "Hello Primefaces 8";
+		this.title = "Hello Primefaces 8";
 		this.navigation = this.navigationTargetService.generateNavigationTargetList();
 	}
 	
 	public String redirect(String target) {
 		return "content/"+target + ".xhtml?faces-redirect=true";
 	}
-
-	public String getGreeting() {
-		return greeting;
-	}
-
-	public void setGreeting(String greeting) {
-		this.greeting = greeting;
-	}
 	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public List<NavigationTarget> getNavigation() {
 		return navigation;
 	}

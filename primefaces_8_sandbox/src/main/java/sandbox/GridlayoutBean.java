@@ -10,23 +10,27 @@ import abstractbean.AbstractBean;
 @ViewScoped
 public class GridlayoutBean extends AbstractBean {
 
-	private String greeting;
+	private String title;
 	
 
 	@PostConstruct
 	public void init() {
-		this.greeting = "gridlayout";
+		this.title = "gridlayout";
 		
 	}
 
 
-	public String getGreeting() {
-		return greeting;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setGreeting(String greeting) {
-		this.greeting = greeting;
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
+
+
+	
 
 
 }
