@@ -46,10 +46,8 @@
 			<div>
 				<ui:fragment id="selected-vehicle"
 					rendered="#{not empty dynamicDropdownBean.selectedVehicleType}">
-					<h:panelGrid columns="2" cellpadding="5">
-						<p:outputLabel value="Your Selection:" />
-						<p:outputLabel value="#{dynamicDropdownBean.selectedVehicleType}" />
-					</h:panelGrid>
+					<component:output-text fieldId="car" label="Your Selection:"
+						value="#{dynamicDropdownBean.selectedVehicleType}" />
 				</ui:fragment>
 			</div>
 			<div>

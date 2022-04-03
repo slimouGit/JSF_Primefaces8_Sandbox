@@ -24,5 +24,9 @@ h1{
 	background: #fff;
 }
 
+.column-width td:nth-child(1) {
+    width: 10rem;
+}
+
 
 

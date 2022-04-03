@@ -18,13 +18,8 @@
 <!-- IMPLEMENTATION -->
 <cc:implementation>
 	<h:panelGrid columns="2" cellpadding="5" class="column-width">
-		<p:column>
-			<p:outputLabel class="label" for="#{cc.attrs.fieldId}"
-				value="#{cc.attrs.label}" />
-		</p:column>
-		<p:column>
-			<p:inputText id="#{cc.attrs.fieldId}" value="#{cc.attrs.value}" />
-		</p:column>
+		<p:outputLabel for="#{cc.attrs.fieldId}" value="#{cc.attrs.label}" />
+		<p:outputLabel id="#{cc.attrs.fieldId}" value="#{cc.attrs.value}" />
 	</h:panelGrid>
 </cc:implementation>
 

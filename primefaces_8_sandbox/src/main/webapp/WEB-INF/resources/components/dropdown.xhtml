@@ -25,7 +25,7 @@
 		<!-- IMPLEMENTATION -->
 		<cc:implementation>
 			<h:form id="#{cc.attrs.formId}">
-			<h:panelGrid columns="#{cc.attrs.columns}" cellpadding="5">
+			<h:panelGrid columns="#{cc.attrs.columns}" cellpadding="5" class="column-width">
 				<p:outputLabel for="#{cc.attrs.fieldId}" value="#{cc.attrs.label}" />
 				<p:selectOneMenu id="#{cc.attrs.fieldId}"
 					value="#{cc.attrs.selectOneMenuValue}"
