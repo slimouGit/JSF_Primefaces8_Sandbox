@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+		<!-- INTERFACE -->
+		<cc:interface>
+			<cc:attribute name="formId"></cc:attribute>
+			<cc:attribute name="pageBean"></cc:attribute>
+			<cc:attribute name="columns"></cc:attribute>
+			<cc:attribute name="fieldId"></cc:attribute>
+			<cc:attribute name="label"></cc:attribute>
+			<cc:attribute name="selectOneMenuValue"></cc:attribute>
+			<cc:attribute name="listener" method-signature="java.lang.String action()"></cc:attribute>
+			<cc:attribute name="update"></cc:attribute>
+			<cc:attribute name="itemLabel"></cc:attribute>
+			<cc:attribute name="selectedItems"></cc:attribute>
+		</cc:interface>
+
+		<!-- IMPLEMENTATION -->
+		<cc:implementation>
+			<h:form id="#{cc.attrs.formId}">
+			<h:panelGrid columns="#{cc.attrs.columns}" cellpadding="5">
+				<p:outputLabel for="#{cc.attrs.fieldId}" value="#{cc.attrs.label}" />
+				<p:selectOneMenu id="#{cc.attrs.fieldId}"
+					value="#{cc.attrs.selectOneMenuValue}"
+					style="width:150px">
+					<p:ajax listener="#{cc.attrs.listener}"
+						update="#{cc.attrs.update}" />
+					<f:selectItem itemLabel="#{cc.attrs.itemLabel}" itemValue=""
+						noSelectionOption="true" />
+					<f:selectItems value="#{cc.attrs.selectedItems}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+		</h:form>
+		</cc:implementation>
+
+</html>

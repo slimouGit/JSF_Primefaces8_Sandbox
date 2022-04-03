@@ -4,6 +4,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
+	xmlns:component="http://xmlns.jcp.org/jsf/composite/components"
 	template="/WEB-INF/resources/templates/subside.xhtml">
 	<ui:define name="pagetitle">Dropdown</ui:define>
 	<ui:define name="header">
@@ -31,21 +32,17 @@
 				</p:accordionPanel>
 			</div>
 		</h:form>
-		<h:form id="vehicle-dropdown">
 
-			<h:panelGrid columns="2" cellpadding="5">
-				<p:outputLabel for="vehicle" value="Vehicle: " />
-				<p:selectOneMenu id="vehicle"
-					value="#{dynamicDropdownBean.selectedVehicleType}"
-					style="width:150px">
-					<p:ajax listener="#{dynamicDropdownBean.onVehicleChange}"
-						update="selected-vehicle-form" />
-					<f:selectItem itemLabel="Select Vehicle" itemValue=""
-						noSelectionOption="true" />
-					<f:selectItems value="#{dynamicDropdownBean.vehicleTypeList}" />
-				</p:selectOneMenu>
-			</h:panelGrid>
-		</h:form>
+		<div>
+			<component:dropdown pageBean="#{dynamicDropdownBean}"
+				formId="vehicle-dropdown" columns="2" fieldId="vehicle"
+				label="Vehicle:"
+				selectOneMenuValue="#{dynamicDropdownBean.selectedVehicleType}"
+				listener="#{dynamicDropdownBean.onVehicleChange()}"
+				update=":selected-vehicle-form" itemLabel="Select Vehicle"
+				selectedItems="#{dynamicDropdownBean.vehicleTypeList}" />
+
+		</div>
 		<h:form id="selected-vehicle-form">
 			<div>
 				<ui:fragment id="selected-vehicle"
@@ -76,7 +73,7 @@
 		</h:form>
 	</ui:define>
 	<ui:define name="footer">
-		<p:outputLabel value="I am the footer"/>
+		<p:outputLabel value="I am the footer" />
 	</ui:define>
 </ui:composition>
 
