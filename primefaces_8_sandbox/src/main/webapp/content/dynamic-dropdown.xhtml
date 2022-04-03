@@ -54,24 +54,16 @@
 			</div>
 			<div>
 				<ui:fragment rendered="#{dynamicDropdownBean.car}">
-					<h:panelGrid columns="2" cellpadding="5">
-						<p:outputLabel for="car" value="Car-Form" />
-						<p:inputText id="car" value="#{dynamicDropdownBean.vehicleValue}" />
-					</h:panelGrid>
+					<component:input-text fieldId="car" label="Your Car"
+						value="#{dynamicDropdownBean.vehicleValue}" />
 				</ui:fragment>
 				<ui:fragment rendered="#{dynamicDropdownBean.motorcycle}">
-					<h:panelGrid columns="2" cellpadding="5">
-						<p:outputLabel for="motorcycle" value="MotorCycle-Form" />
-						<p:inputText id="motorcycle"
-							value="#{dynamicDropdownBean.vehicleValue}" />
-					</h:panelGrid>
+					<component:input-text fieldId="motorcycle" label="Your Motorcycle"
+						value="#{dynamicDropdownBean.vehicleValue}" />
 				</ui:fragment>
 				<ui:fragment rendered="#{dynamicDropdownBean.truck}">
-					<h:panelGrid columns="2" cellpadding="5">
-						<p:outputLabel for="truck" value="Truck-Form" />
-						<p:inputText id="truck"
-							value="#{dynamicDropdownBean.vehicleValue}" />
-					</h:panelGrid>
+					<component:input-text fieldId="truck" label="Your Truck"
+						value="#{dynamicDropdownBean.vehicleValue}" />
 				</ui:fragment>
 			</div>
 			<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
