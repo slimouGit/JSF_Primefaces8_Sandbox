@@ -5,7 +5,7 @@
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/resources/templates/master.xhtml">
-	<ui:define name="pagetitle">Primefaces Sandbox</ui:define>
+	<ui:define name="pagetitle">#{dashboardBean.title}</ui:define>
 	<ui:define name="header">
 		<h1>
 			<p:outputLabel value="#{dashboardBean.title}" />

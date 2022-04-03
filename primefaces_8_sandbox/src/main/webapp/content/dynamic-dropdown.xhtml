@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:component="http://xmlns.jcp.org/jsf/composite/components"
 	template="/WEB-INF/resources/templates/subside.xhtml">
-	<ui:define name="pagetitle">Dropdown</ui:define>
+	<ui:define name="pagetitle">#{dynamicDropdownBean.title}</ui:define>
 	<ui:define name="header">
 		<h1>
 			<p:outputLabel value="#{dynamicDropdownBean.title}" />

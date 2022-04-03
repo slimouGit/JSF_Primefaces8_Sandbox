@@ -5,7 +5,7 @@
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/resources/templates/subside.xhtml">
-	<ui:define name="pagetitle">Gridlayout</ui:define>
+	<ui:define name="pagetitle">#{gridlayoutBean.title}</ui:define>
 	<ui:define name="header">
 		<h1>
 			<p:outputLabel value="#{gridlayoutBean.title}" />
