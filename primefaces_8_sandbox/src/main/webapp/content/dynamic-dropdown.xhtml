@@ -41,7 +41,6 @@
 				listener="#{dynamicDropdownBean.onVehicleChange()}"
 				update=":selected-vehicle-form" itemLabel="Select Vehicle"
 				selectedItems="#{dynamicDropdownBean.vehicleTypeList}" />
-
 		</div>
 		<h:form id="selected-vehicle-form">
 			<div>
@@ -54,23 +53,33 @@
 				</ui:fragment>
 			</div>
 			<div>
-				<h:panelGrid columns="1" cellpadding="5">
-					<p:growl id="msgs" showDetail="true"
-						skipDetailIfEqualsSummary="true" />
-					<ui:fragment rendered="#{dynamicDropdownBean.car}">
-						<p:outputLabel value="Car-Form" />
-					</ui:fragment>
-					<ui:fragment rendered="#{dynamicDropdownBean.motorcycle}">
-						<p:outputLabel value="MotorCycle-Form" />
-					</ui:fragment>
-					<ui:fragment rendered="#{dynamicDropdownBean.truck}">
-						<p:outputLabel value="Truck-Form" />
-					</ui:fragment>
-					<p:commandButton value="Submit" update="msgs"
-						action="#{dynamicDropdownBean.displayVehicle}" />
-				</h:panelGrid>
+				<ui:fragment rendered="#{dynamicDropdownBean.car}">
+					<h:panelGrid columns="2" cellpadding="5">
+						<p:outputLabel for="car" value="Car-Form" />
+						<p:inputText id="car" value="#{dynamicDropdownBean.vehicleValue}" />
+					</h:panelGrid>
+				</ui:fragment>
+				<ui:fragment rendered="#{dynamicDropdownBean.motorcycle}">
+					<h:panelGrid columns="2" cellpadding="5">
+						<p:outputLabel for="motorcycle" value="MotorCycle-Form" />
+						<p:inputText id="motorcycle"
+							value="#{dynamicDropdownBean.vehicleValue}" />
+					</h:panelGrid>
+				</ui:fragment>
+				<ui:fragment rendered="#{dynamicDropdownBean.truck}">
+					<h:panelGrid columns="2" cellpadding="5">
+						<p:outputLabel for="truck" value="Truck-Form" />
+						<p:inputText id="truck"
+							value="#{dynamicDropdownBean.vehicleValue}" />
+					</h:panelGrid>
+				</ui:fragment>
 			</div>
+			<p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+			<p:commandButton value="Submit" update="msgs"
+				action="#{dynamicDropdownBean.displayVehicle}" />
 		</h:form>
+
+
 	</ui:define>
 	<ui:define name="footer">
 		<p:outputLabel value="I am the footer" />

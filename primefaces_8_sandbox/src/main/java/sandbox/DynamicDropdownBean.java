@@ -25,6 +25,7 @@ public class DynamicDropdownBean extends AbstractBean {
 	private boolean car;
 	private boolean motorcycle;
 	private boolean truck;
+	private String vehicleValue;
 
 	@PostConstruct
 	public void init() {
@@ -50,13 +51,12 @@ public class DynamicDropdownBean extends AbstractBean {
 	
 	public void displayVehicle() {
         FacesMessage msg;
-        if (this.selectedVehicleType != null) {
-            msg = new FacesMessage("Selected Vehicle", this.selectedVehicleType);
+        if (null != this.vehicleValue && !this.vehicleValue.isEmpty()) {
+            msg = new FacesMessage("Vehicle", this.vehicleValue);
         }
         else {
             msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid", "Vehicle is not selected.");
         }
-
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 
@@ -110,4 +110,14 @@ public class DynamicDropdownBean extends AbstractBean {
 		this.truck = truck;
 	}
 
+	public String getVehicleValue() {
+		return vehicleValue;
+	}
+
+	public void setVehicleValue(String vehicleValue) {
+		this.vehicleValue = vehicleValue;
+	}
+	
+	
+	
 }
