@@ -15,10 +15,10 @@
 		<p:link outcome="home" value="Home" />
 	</ui:define>
 	<ui:define name="content">
-		<h:form id="dropdown-teaser">
+		<h:form id="dropdown-teaser" class="accordion-panel">
 			<div class="card">
 				<p:accordionPanel widgetVar="teaser" activeIndex="">
-					<p:tab title="dynamic dropdown">
+					<p:tab title="#{dynamicDropdownBean.title}">
 						<p class="p-m-0">Lorem ipsum dolor sit amet, consectetur
 							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
