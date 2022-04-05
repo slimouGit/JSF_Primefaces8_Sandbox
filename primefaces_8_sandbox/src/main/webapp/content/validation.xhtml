@@ -31,9 +31,39 @@
 				</p:accordionPanel>
 			</div>
 		</h:form>
+		<h:form id="order-form">
+			<p:panelGrid columns="3" cellpadding="5" class="column-width">
+				<p:outputLabel value="Bestelldatum" />
+				<p:calendar id="orderDate"
+					value="#{validationBean.order.orderDate}" mask="true"
+					pattern="yyyy-MM-dd" required="true"
+					requiredMessage="Bitte ein Datum angeben.">
+				</p:calendar>
+				<h:message for="orderDate" styleClass="errorMessage" />
+				
+				<p:outputLabel value="Versanddatum" />
+				<p:calendar id="shippingDate"
+					value="#{validationBean.order.shippingDate}" mask="true"
+					pattern="yyyy-MM-dd" required="true"
+					requiredMessage="Bitte ein Datum angeben.">
+				</p:calendar>
+				<h:message for="shippingDate" styleClass="errorMessage" />
+				
+				<p:outputLabel value="Lieferdatum" />
+				<p:calendar id="deliveryDate"
+					value="#{validationBean.order.deliveryDate}" mask="true"
+					pattern="yyyy-MM-dd" required="true"
+					requiredMessage="Bitte ein Datum angeben.">
+				</p:calendar>
+				<h:message for="deliveryDate" styleClass="errorMessage" />
+				
+				<p:commandButton value="Submit" action="#{validationBean.checkOrder}"></p:commandButton>
+
+			</p:panelGrid>
+		</h:form>
 	</ui:define>
 	<ui:define name="footer">
-		<p:outputLabel value="I am the footer"/>
+		<p:outputLabel value="I am the footer" />
 	</ui:define>
 </ui:composition>
 

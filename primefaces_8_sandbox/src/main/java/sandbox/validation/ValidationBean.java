@@ -11,18 +11,35 @@ import abstractbean.AbstractBean;
 public class ValidationBean extends AbstractBean {
 	
 	private String title;
+	private Order order;
 	
 	@PostConstruct
 	public void init() {
 		this.title = "validation";
+		this.order = new Order();
 	}
-
+	
+	public void checkOrder() {
+		System.out.println("Order "+ this.order);
+		System.out.println("Order "+ this.order.getOrderDate());
+		System.out.println("Order "+ this.order.getShippingDate());
+		System.out.println("Order "+ this.order.getDeliveryDate());
+	}
+	
 	public String getTitle() {
 		return title;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 	
 	
