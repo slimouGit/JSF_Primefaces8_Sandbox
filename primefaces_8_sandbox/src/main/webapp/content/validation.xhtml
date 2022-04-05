@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:t="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/resources/templates/subside.xhtml">
+	<ui:define name="pagetitle">#{validationBean.title}</ui:define>
+	<ui:define name="header">
+		<h1>
+			<p:outputLabel value="#{validationBean.title}" />
+		</h1>
+	</ui:define>
+	<ui:define name="navigation">
+		<p:link outcome="home" value="Home" />
+	</ui:define>
+	<ui:define name="content">
+		<h:form class="accordion-panel">
+			<div class="card">
+				<p:accordionPanel widgetVar="teaser" activeIndex="">
+					<p:tab title="#{validationBean.title}">
+						<p class="p-m-0">Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate
+							velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+							occaecat cupidatat non proident, sunt in culpa qui officia
+							deserunt mollit anim id est laborum.</p>
+					</p:tab>
+				</p:accordionPanel>
+			</div>
+		</h:form>
+	</ui:define>
+	<ui:define name="footer">
+		<p:outputLabel value="I am the footer"/>
+	</ui:define>
+</ui:composition>
+
