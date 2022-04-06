@@ -5,10 +5,10 @@
 	xmlns:t="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/resources/templates/subside.xhtml">
-	<ui:define name="pagetitle">#{validationBean.title}</ui:define>
+	<ui:define name="pagetitle">#{orderBean.title}</ui:define>
 	<ui:define name="header">
 		<h1>
-			<p:outputLabel value="#{validationBean.title}" />
+			<p:outputLabel value="#{orderBean.title}" />
 		</h1>
 	</ui:define>
 	<ui:define name="navigation">
@@ -18,7 +18,7 @@
 		<h:form class="accordion-panel">
 			<div class="card">
 				<p:accordionPanel widgetVar="teaser" activeIndex="">
-					<p:tab title="#{validationBean.title}">
+					<p:tab title="#{orderBean.title}">
 						<p class="p-m-0">Lorem ipsum dolor sit amet, consectetur
 							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -32,32 +32,35 @@
 			</div>
 		</h:form>
 		<h:form id="order-form">
+		
+				
 			<p:panelGrid columns="3" cellpadding="5" class="column-width">
 				<p:outputLabel value="Bestelldatum" />
-				<p:calendar id="orderDate"
-					value="#{validationBean.order.orderDate}" mask="true"
-					pattern="yyyy-MM-dd" required="true"
+				<p:calendar id="orderDate" value="#{orderBean.order.orderDate}"
+					mask="true" pattern="yyyy-MM-dd" required="true"
 					requiredMessage="Bitte ein Datum angeben.">
 				</p:calendar>
 				<h:message for="orderDate" styleClass="errorMessage" />
-				
+
 				<p:outputLabel value="Versanddatum" />
 				<p:calendar id="shippingDate"
-					value="#{validationBean.order.shippingDate}" mask="true"
+					value="#{orderBean.order.shippingDate}" mask="true"
 					pattern="yyyy-MM-dd" required="true"
 					requiredMessage="Bitte ein Datum angeben.">
 				</p:calendar>
 				<h:message for="shippingDate" styleClass="errorMessage" />
-				
+
 				<p:outputLabel value="Lieferdatum" />
 				<p:calendar id="deliveryDate"
-					value="#{validationBean.order.deliveryDate}" mask="true"
+					value="#{orderBean.order.deliveryDate}" mask="true"
 					pattern="yyyy-MM-dd" required="true"
 					requiredMessage="Bitte ein Datum angeben.">
 				</p:calendar>
 				<h:message for="deliveryDate" styleClass="errorMessage" />
-				
-				<p:commandButton value="Submit" action="#{validationBean.checkOrder}"></p:commandButton>
+
+				<p:commandButton value="Submit" validateClient="true" action="#{orderBean.checkOrder}" update="order-form" process="orderDate @this order-form">
+					<f:ajax execute="@form" render="@form" listener="#{orderValidatorBean.orderValidatorService.validateOrder(orderBean.order)}" />
+				</p:commandButton>
 
 			</p:panelGrid>
 		</h:form>

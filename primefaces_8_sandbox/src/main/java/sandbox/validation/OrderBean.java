@@ -8,7 +8,7 @@ import abstractbean.AbstractBean;
 
 @Named
 @ViewScoped
-public class ValidationBean extends AbstractBean {
+public class OrderBean extends AbstractBean {
 	
 	private String title;
 	private Order order;
@@ -21,6 +21,7 @@ public class ValidationBean extends AbstractBean {
 	
 	public void checkOrder() {
 		System.out.println("Order "+ this.order);
+		this.order.setOrderDate(this.order.getOrderDate());
 		System.out.println("Order "+ this.order.getOrderDate());
 		System.out.println("Order "+ this.order.getShippingDate());
 		System.out.println("Order "+ this.order.getDeliveryDate());
