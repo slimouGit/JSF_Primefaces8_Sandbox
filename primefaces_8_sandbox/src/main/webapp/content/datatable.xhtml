@@ -31,9 +31,67 @@
 				</p:accordionPanel>
 			</div>
 		</h:form>
+		<p:outputLabel value="individuel css"/>
+		<h:form>
+			<p:dataTable class="data-table" var="person"
+				value="#{datatableBean.persons}">
+				<p:column headerText="Vorname">
+					<h:outputText value="#{person.forname}" />
+				</p:column>
+
+				<p:column headerText="Name">
+					<h:outputText value="#{person.lastname}" />
+				</p:column>
+
+				<p:column headerText="Geschlecht">
+					<h:outputText value="#{person.gender}" />
+				</p:column>
+
+				<p:column headerText="Geburtstag">
+					<h:outputText value="#{person.birthday}" />
+				</p:column>
+
+				<p:column headerText="Telefon">
+					<h:outputText value="#{person.phonenumber}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{person.email}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+		<p:outputLabel value="standard css"/>
+		<h:form>
+			<p:dataTable  var="person"
+				value="#{datatableBean.persons}">
+				<p:column headerText="Vorname">
+					<h:outputText value="#{person.forname}" />
+				</p:column>
+
+				<p:column headerText="Name">
+					<h:outputText value="#{person.lastname}" />
+				</p:column>
+
+				<p:column headerText="Geschlecht">
+					<h:outputText value="#{person.gender}" />
+				</p:column>
+
+				<p:column headerText="Geburtstag">
+					<h:outputText value="#{person.birthday}" />
+				</p:column>
+
+				<p:column headerText="Telefon">
+					<h:outputText value="#{person.phonenumber}" />
+				</p:column>
+
+				<p:column headerText="Email">
+					<h:outputText value="#{person.email}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
 	</ui:define>
 	<ui:define name="footer">
-		<p:outputLabel value="I am the footer"/>
+		<p:outputLabel value="I am the footer" />
 	</ui:define>
 </ui:composition>
 
