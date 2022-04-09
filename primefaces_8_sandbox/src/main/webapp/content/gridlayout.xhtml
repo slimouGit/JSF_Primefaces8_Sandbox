@@ -31,9 +31,59 @@
 				</p:accordionPanel>
 			</div>
 		</h:form>
+
+		<div class="grid-layout">
+			<p:panelGrid columns="2" layout="grid"
+				styleClass="showcase-text-align-left"  >
+				<p:column>
+					<h:outputText value="row 1 column 1" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 1 column 2" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 2 column 1" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 2 column 2" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 3 column 1" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 3 column 2" />
+				</p:column>
+			</p:panelGrid>
+		</div>
+		
+		<div>
+			<p:panelGrid columns="2" layout="grid"
+				styleClass="showcase-text-align-left" >
+				<p:column>
+					<h:outputText value="row 1 column 1" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 1 column 2" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 2 column 1" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 2 column 2" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 3 column 1" />
+				</p:column>
+				<p:column>
+					<h:outputText value="row 3 column 2" />
+				</p:column>
+			</p:panelGrid>
+		</div>
+		
+		
 	</ui:define>
 	<ui:define name="footer">
-		<p:outputLabel value="I am the footer"/>
+		<p:outputLabel value="I am the footer" />
 	</ui:define>
 </ui:composition>
 
