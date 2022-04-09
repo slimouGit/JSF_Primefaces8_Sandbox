@@ -13,7 +13,8 @@ public class NavigationTargetService {
 		return new ArrayList<NavigationTarget>(Arrays.asList(
 				new NavigationTarget("dynamic-dropdown", "Dynamic Dropdown"),
 				new NavigationTarget("validation", "Validation"),
-				new NavigationTarget("gridlayout", "Gridlayout")
+				new NavigationTarget("gridlayout", "Gridlayout"),
+				new NavigationTarget("datatable", "DataTable")
 				));
 	}
 
