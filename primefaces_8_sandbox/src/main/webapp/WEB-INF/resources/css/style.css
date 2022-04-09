@@ -24,8 +24,17 @@ h1{
 	background: #fff;
 }
 
+.errorMessage{
+	color: #ff0000;
+}
+
 .column-width td:nth-child(1) {
     width: 10rem;
+}
+
+.panel-grid.ui-panelgrid>*>tr,
+.panel-grid.ui-panelgrid .ui-panelgrid-cell {
+    border: none;
 }
 
 

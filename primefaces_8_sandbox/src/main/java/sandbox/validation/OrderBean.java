@@ -1,7 +1,11 @@
 package sandbox.validation;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import abstractbean.AbstractBean;
@@ -9,6 +13,9 @@ import abstractbean.AbstractBean;
 @Named
 @ViewScoped
 public class OrderBean extends AbstractBean {
+	
+	@Inject
+	private OrderValidatorService orderValidatorService;
 	
 	private String title;
 	private Order order;
@@ -20,11 +27,16 @@ public class OrderBean extends AbstractBean {
 	}
 	
 	public void checkOrder() {
-		System.out.println("Order "+ this.order);
-		this.order.setOrderDate(this.order.getOrderDate());
-		System.out.println("Order "+ this.order.getOrderDate());
-		System.out.println("Order "+ this.order.getShippingDate());
-		System.out.println("Order "+ this.order.getDeliveryDate());
+		try {
+			this.orderValidatorService.validateOrder(this.order);	
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Erfolgreich gespeichert", "Erfolgreich gespeichert");
+			FacesContext.getCurrentInstance().addMessage("order-form", message);
+		}catch(ValidatorException ve) {
+			String errorMessage = ve.getMessage();
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_ERROR, errorMessage, errorMessage);
+			FacesContext.getCurrentInstance().addMessage("order-form", message);
+			System.out.println("Error " + ve.getMessage());
+		}
 	}
 	
 	public String getTitle() {

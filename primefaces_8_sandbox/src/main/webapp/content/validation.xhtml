@@ -32,9 +32,10 @@
 			</div>
 		</h:form>
 		<h:form id="order-form">
-		
+			<p:messages for="order-form" showDetail="false" severity="error, info"
+                    closable="true" />
 				
-			<p:panelGrid columns="3" cellpadding="5" class="column-width">
+			<p:panelGrid columns="3" cellpadding="5" class="column-width panel-grid">
 				<p:outputLabel value="Bestelldatum" />
 				<p:calendar id="orderDate" value="#{orderBean.order.orderDate}"
 					mask="true" pattern="yyyy-MM-dd" required="true"
@@ -53,13 +54,15 @@
 				<p:outputLabel value="Lieferdatum" />
 				<p:calendar id="deliveryDate"
 					value="#{orderBean.order.deliveryDate}" mask="true"
-					pattern="yyyy-MM-dd" required="true"
-					requiredMessage="Bitte ein Datum angeben.">
+					pattern="dd.MM.yyyy" >
+					<f:validator validatorId="deliveryDateValidator"/>
 				</p:calendar>
 				<h:message for="deliveryDate" styleClass="errorMessage" />
 
 				<p:commandButton value="Submit" validateClient="true" action="#{orderBean.checkOrder}" update="order-form" process="orderDate @this order-form">
-					<f:ajax execute="@form" render="@form" listener="#{orderValidatorBean.orderValidatorService.validateOrder(orderBean.order)}" />
+					<ui:remove>
+					<f:ajax execute="@form" render="@form" listener="#{orderBean.validateOrder(orderBean.order)}" />
+					</ui:remove>
 				</p:commandButton>
 
 			</p:panelGrid>
