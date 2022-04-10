@@ -150,8 +150,16 @@ h1 {
 }
 }
 
+.button ui-button-text ui-c{
+	background: red;
+	border: none;
+}
 
-
+.ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default{
+	background: red;
+	border: none;
+	border-radius: 0px;
+}
 
 
 
