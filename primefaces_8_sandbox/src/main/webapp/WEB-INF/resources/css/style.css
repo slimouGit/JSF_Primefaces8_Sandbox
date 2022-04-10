@@ -62,7 +62,17 @@ h1 {
 	width: 100%;	
 }
 
-@media screen and (max-width: 1100px) {
+@media ( min-width: 1001px ) { 
+	.grid-layout .ui-g div:nth-child(1) {
+	width: 15%;
+}
+
+.grid-layout .ui-g div:nth-child(2) {
+	width: 85%;
+}
+}
+
+@media screen and (max-width: 1000px) {
 .grid-layout .ui-g div:nth-child(1) {
 	width: 20%;
 }
