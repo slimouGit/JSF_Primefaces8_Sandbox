@@ -56,12 +56,20 @@ h1 {
 
 #---------------------------------------------------------------------
 
-.grid-layout .ui-widget-content{
+.grid-layout > .ui-panelgrid.ui-widget-content {
 	border: none;	
+}
+
+.grid-layout * { 
+	border: none; 
 }
 
 .grid-layout {
 	width: 100%;	
+}
+
+.grid-layout-px * { 
+	border: none; 
 }
 
 @media ( min-width: 1001px ) { 
