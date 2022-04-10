@@ -31,10 +31,12 @@
 				</p:accordionPanel>
 			</div>
 		</h:form>
-
+		<h3>
+			<p:outputLabel value="Grid Layout css and media queries"></p:outputLabel>
+		</h3>
 		<div class="grid-layout">
 			<p:panelGrid columns="2" layout="grid"
-				styleClass="showcase-text-align-left"  >
+				styleClass="showcase-text-align-left">
 				<p:column>
 					<h:outputText value="row 1 column 1" />
 				</p:column>
@@ -55,10 +57,39 @@
 				</p:column>
 			</p:panelGrid>
 		</div>
-		
+		<h3>
+			<p:outputLabel value="Grid Form css and media queries"></p:outputLabel>
+		</h3>
+		<h:form>
+			<div class="grid-layout">
+				<p:panelGrid columns="2" layout="grid"
+					styleClass="showcase-text-align-left">
+					<p:column>
+						<p:outputLabel value="Label" />
+					</p:column>
+					<p:column>
+						<p:inputText></p:inputText>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Label" />
+					</p:column>
+					<p:column>
+						<p:inputText></p:inputText>
+					</p:column>
+					<p:column>
+					</p:column>
+					<p:column>
+						<p:commandButton value="Submit"></p:commandButton>
+					</p:column>
+				</p:panelGrid>
+			</div>
+		</h:form>
 		<div>
+			<h3>
+				<p:outputLabel value="Grid Form without css"></p:outputLabel>
+			</h3>
 			<p:panelGrid columns="2" layout="grid"
-				styleClass="showcase-text-align-left" >
+				styleClass="showcase-text-align-left">
 				<p:column>
 					<h:outputText value="row 1 column 1" />
 				</p:column>
@@ -79,8 +110,8 @@
 				</p:column>
 			</p:panelGrid>
 		</div>
-		
-		
+
+
 	</ui:define>
 	<ui:define name="footer">
 		<p:outputLabel value="I am the footer" />

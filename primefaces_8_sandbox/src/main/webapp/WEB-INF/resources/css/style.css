@@ -62,12 +62,32 @@ h1 {
 	width: 100%;	
 }
 
+@media screen and (max-width: 1100px) {
+.grid-layout .ui-g div:nth-child(1) {
+	width: 20%;
+}
+
+.grid-layout .ui-g div:nth-child(2) {
+	width: 80%;
+}
+}
+@media screen and (max-width: 900px) {
 .grid-layout .ui-g div:nth-child(1) {
 	width: 30%;
 }
 
 .grid-layout .ui-g div:nth-child(2) {
 	width: 70%;
+}
+}
+@media screen and (max-width: 600px) {
+  .grid-layout .ui-g div:nth-child(1) {
+	width: 50%;
+}
+
+.grid-layout .ui-g div:nth-child(2) {
+	width: 50%;
+}
 }
 
 
