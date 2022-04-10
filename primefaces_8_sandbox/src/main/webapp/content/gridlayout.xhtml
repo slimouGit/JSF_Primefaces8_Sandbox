@@ -31,6 +31,7 @@
 				</p:accordionPanel>
 			</div>
 		</h:form>
+		<p:separator/>
 		<h3>
 			<p:outputLabel value="Grid Layout css and media queries"></p:outputLabel>
 		</h3>
@@ -57,6 +58,7 @@
 				</p:column>
 			</p:panelGrid>
 		</div>
+		<p:separator/>
 		<h3>
 			<p:outputLabel value="Grid Form css and media queries"></p:outputLabel>
 		</h3>
@@ -84,6 +86,35 @@
 				</p:panelGrid>
 			</div>
 		</h:form>
+		<p:separator/>
+		<h3>
+			<p:outputLabel value="Grid Form css and media queries with px width"></p:outputLabel>
+		</h3>
+		<h:form>
+			<div class="grid-layout-px">
+				<p:panelGrid columns="2" layout="grid"
+					styleClass="showcase-text-align-left">
+					<p:column>
+						<p:outputLabel value="Label" />
+					</p:column>
+					<p:column>
+						<p:inputText></p:inputText>
+					</p:column>
+					<p:column>
+						<p:outputLabel value="Label" />
+					</p:column>
+					<p:column>
+						<p:inputText></p:inputText>
+					</p:column>
+					<p:column>
+					</p:column>
+					<p:column>
+						<p:commandButton value="Submit"></p:commandButton>
+					</p:column>
+				</p:panelGrid>
+			</div>
+		</h:form>
+		<p:separator/>
 		<div>
 			<h3>
 				<p:outputLabel value="Grid Form without css"></p:outputLabel>
@@ -110,7 +141,7 @@
 				</p:column>
 			</p:panelGrid>
 		</div>
-
+		<p:separator/>
 
 	</ui:define>
 	<ui:define name="footer">
