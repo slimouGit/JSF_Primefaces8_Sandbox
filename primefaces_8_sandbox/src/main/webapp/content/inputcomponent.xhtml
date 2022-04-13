@@ -19,7 +19,10 @@
 	
 		<h:form>
 			<component:input-text-neu1 label="Label 1" />	
-			<component:input-text-neu1 label="Label 2" />		
+			<component:input-text-neu1 label="Label 2" />	
+			
+			<p:commandButton value="Submit" update="ausgabe"/>	
+			<p:outputLabel id="ausgabe" value="#{inputComponentBean1.name}"/>
 		</h:form>				
 			
 	</ui:define>
