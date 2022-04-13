@@ -14,7 +14,8 @@ public class NavigationTargetService {
 				new NavigationTarget("dynamic-dropdown", "Dynamic Dropdown"),
 				new NavigationTarget("validation", "Validation"),
 				new NavigationTarget("gridlayout", "Gridlayout"),
-				new NavigationTarget("datatable", "DataTable")
+				new NavigationTarget("datatable", "DataTable"),
+				new NavigationTarget("inputcomponent", "InputComponent")
 				));
 	}
 

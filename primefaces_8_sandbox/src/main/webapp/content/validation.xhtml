@@ -67,6 +67,14 @@
 
 			</p:panelGrid>
 		</h:form>
+		<h:form>
+			<p:panelGrid columns="3" cellpadding="5" class="column-width panel-grid">
+				<p:outputLabel value="Jahr" />
+				<p:inputText id="year" placeholder="2022" value="#{orderBean.year}"></p:inputText>
+				<h:message for="year" styleClass="errorMessage" />
+				<p:commandButton action="#{orderBean.yearValue}" value="Submit"/>
+			</p:panelGrid>
+		</h:form>
 	</ui:define>
 	<ui:define name="footer">
 		<p:outputLabel value="I am the footer" />

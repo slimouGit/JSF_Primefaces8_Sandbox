@@ -19,6 +19,7 @@ public class OrderBean extends AbstractBean {
 	
 	private String title;
 	private Order order;
+	private String year;
 	
 	@PostConstruct
 	public void init() {
@@ -39,6 +40,10 @@ public class OrderBean extends AbstractBean {
 		}
 	}
 	
+	public void yearValue() {
+		System.out.println("Year Value " + this.year);
+	}	
+	
 	public String getTitle() {
 		return title;
 	}
@@ -53,6 +58,14 @@ public class OrderBean extends AbstractBean {
 
 	public void setOrder(Order order) {
 		this.order = order;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 	
 	
