@@ -15,7 +15,8 @@
 	margin: 5px 0;
 }
 
-.grid-layout-meldezeitraumgenerator .ui-g div:nth-child(1) {
+.grid-layout-meldezeitraumgenerator .ui-g div:nth-child(2) {
+	width: 250px;
 	margin: 5px 0;
 }
 

@@ -18,8 +18,7 @@ public class MeldezeitraumGeneratorBean extends AbstractBean {
 	private List<String> meldezeitraumModusMap = new ArrayList<>();
 	private String meldeZeitraumPraefix;
 	private List<String> meldezeitraumPraefixListe = new ArrayList<>();
-	private boolean zeigeMeldezeitraumDetail_1;
-	private boolean zeigeMeldezeitraumDetail_2;
+	
 	
 	@PostConstruct
 	public void init() {
@@ -45,13 +44,33 @@ public class MeldezeitraumGeneratorBean extends AbstractBean {
 	
 	}
 	
+	
+	private boolean zeigeMeldezeitraumDetail_1;	
 	public boolean toggleMeldezeitraumDetail_1() {		
 		return this.zeigeMeldezeitraumDetail_1 ^= true;
 	}
+	public boolean isZeigeMeldezeitraumDetail_1() {
+		return zeigeMeldezeitraumDetail_1;
+	}
 	
+	
+	private boolean zeigeMeldezeitraumDetail_2;
 	public boolean toggleMeldezeitraumDetail_2() {
 		return this.zeigeMeldezeitraumDetail_2 ^= true;
 	}
+	public boolean isZeigeMeldezeitraumDetail_2() {
+		return zeigeMeldezeitraumDetail_2;
+	}
+	
+	
+	private boolean zeigeMeldezeitraumDetail_3;
+	public boolean toggleMeldezeitraumDetail_3() {
+		return this.zeigeMeldezeitraumDetail_3 ^= true;
+	}
+	public boolean isZeigeMeldezeitraumDetail_3() {
+		return zeigeMeldezeitraumDetail_3;
+	}
+	
 	
 	public String getTitle() {
 		return title;
@@ -93,24 +112,6 @@ public class MeldezeitraumGeneratorBean extends AbstractBean {
 	public void setMeldezeitraumPraefixListe(List<String> meldezeitraumPraefixListe) {
 		this.meldezeitraumPraefixListe = meldezeitraumPraefixListe;
 	}
-
-	public boolean isZeigeMeldezeitraumDetail_1() {
-		return zeigeMeldezeitraumDetail_1;
-	}
-
-	public void setZeigeMeldezeitraumDetail_1(boolean zeigeMeldezeitraumDetail_1) {
-		this.zeigeMeldezeitraumDetail_1 = zeigeMeldezeitraumDetail_1;
-	}
-
-	public boolean isZeigeMeldezeitraumDetail_2() {
-		return zeigeMeldezeitraumDetail_2;
-	}
-
-	public void setZeigeMeldezeitraumDetail_2(boolean zeigeMeldezeitraumDetail_2) {
-		this.zeigeMeldezeitraumDetail_2 = zeigeMeldezeitraumDetail_2;
-	}
-
-	
 	
 	
 	

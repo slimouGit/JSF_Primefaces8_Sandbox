@@ -18,16 +18,26 @@
 	<ui:define name="content">
 	<h:form>	
 		<component:meldezeitraumGenerator 
-		greeting="Meldezeitgenerator" 
-		meldezeitraumId="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_1}"
-		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_1}"/>
-	</h:form>	
+		meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_1}"
+		meldezeitraumDetailAnsichtId="detailansicht1"
+		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_1}"
+		meldezeitraumEinhabeId="Eins"/>
+		
 	<p:separator/>
-	<h:form>	
+		
 		<component:meldezeitraumGenerator 
-		greeting="Meldezeitgenerator" 
-		meldezeitraumId="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_2}"
-		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_2}"/>
+		meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_2}"
+		meldezeitraumDetailAnsichtId="detailansicht2"
+		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_2}"
+		meldezeitraumEinhabeId="Zwei"/>
+		
+		<p:separator/>
+		
+		<component:meldezeitraumGenerator 
+		meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_3}"
+		meldezeitraumDetailAnsichtId="detailansicht3"
+		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_3}"
+		meldezeitraumEinhabeId="Drei"/>
 	</h:form>			
 			
 	</ui:define>

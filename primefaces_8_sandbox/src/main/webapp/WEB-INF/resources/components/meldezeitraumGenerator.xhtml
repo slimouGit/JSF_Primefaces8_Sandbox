@@ -10,8 +10,9 @@
 
 <!-- INTERFACE -->
 <cc:interface>
-	<cc:attribute name="greeting"></cc:attribute>
-	<cc:attribute name="meldezeitraumId"></cc:attribute>
+	<cc:attribute name="meldezeitraumDetailAnsicht"></cc:attribute>
+	<cc:attribute name="meldezeitraumDetailAnsichtId"></cc:attribute>
+	<cc:attribute name="meldezeitraumEinhabeId"></cc:attribute>
 	<cc:attribute name="toggleDetailMeldezeitraumMethode" method-signature="java.lang.String action()"></cc:attribute>
 </cc:interface>
 
@@ -21,23 +22,26 @@
 		<div class="grid-layout-meldezeitraumgenerator">
 			<p:panelGrid columns="4" layout="grid">
 				<h:column>
-					<h:outputLabel for="meldezeitraum" value="Meldezeitraum" />
-					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" rendered="#{not cc.attrs.meldezeitraumId}" >					
+					<h:outputLabel for="#{cc.attrs.meldezeitraumEinhabeId}" value="Meldezeitraum" />
+					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" rendered="#{not cc.attrs.meldezeitraumDetailAnsicht}" >					
 						<h:graphicImage name="/images/arrow_up.svg" style="width:24px; margin-left: 10px;" />
 					</p:commandLink>
-					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" rendered="#{cc.attrs.meldezeitraumId}" >					
+					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" rendered="#{cc.attrs.meldezeitraumDetailAnsicht}" >					
 						<h:graphicImage name="/images/arrow_down.svg" style="width:24px; margin-left: 10px;" />
 					</p:commandLink>
 				</h:column>
 				<h:column>
-					<p:inputText id="meldezeitraum" />
+					<p:inputText id="#{cc.attrs.meldezeitraumEinhabeId}" />
 				</h:column>
-				<h:column>4</h:column>
-				<h:column>5</h:column>
+				<h:column>
+			
+				</h:column>
+				<h:column>
+				</h:column>
 			</p:panelGrid>
 		</div>
 	</ui:fragment>
-	<ui:fragment id="fragment-meldezeitraum-detail" rendered="#{cc.attrs.meldezeitraumId}">
+	<ui:fragment id="#{cc.attrs.meldezeitraumDetailAnsichtId}" rendered="#{cc.attrs.meldezeitraumDetailAnsicht}">
 		<div class="meldezeitraum-detail">
 			<h4>
 				<p:outputLabel value="Detaillierte Eingabe Meldezeitraum" />
@@ -47,8 +51,8 @@
 					<h:column>
 						<p:outputLabel value="Meldezeitraum" />
 					</h:column>
-					<h:column>
-						<p:selectOneMenu
+					<h:column >
+						<p:selectOneMenu 
 							value="#{meldezeitraumGeneratorBean.meldeZeitraumPraefix}">
 							<f:selectItem itemLabel="Select One" itemValue="" />
 							<f:selectItems
@@ -56,17 +60,17 @@
 						</p:selectOneMenu>
 					</h:column>
 					<h:column>
-						4
+						
 					</h:column>
-					<h:column>5</h:column>
+					<h:column></h:column>
 					<h:column>
 						<p:outputLabel value="Jahr" />
 					</h:column>
 					<h:column>
 						<p:spinner id="minMax" min="0" max="100" />
 					</h:column>
-					<h:column>4</h:column>
-					<h:column>5</h:column>
+					<h:column></h:column>
+					<h:column></h:column>
 					<h:column>
 						<p:outputLabel value="Zeitraum" />
 					</h:column>
@@ -78,8 +82,8 @@
 								value="#{meldezeitraumGeneratorBean.meldezeitraumModusMap}" />
 						</p:selectOneMenu>
 					</h:column>
-					<h:column>4</h:column>
-					<h:column>5</h:column>
+					<h:column></h:column>
+					<h:column></h:column>
 				</p:panelGrid>
 			</div>
 		</div>
