@@ -16,12 +16,22 @@
 		<p:link outcome="home" value="Home" />
 	</ui:define>
 	<ui:define name="content">
-	
-				
+	<h:form>	
+		<component:meldezeitraumGenerator 
+		greeting="Meldezeitgenerator" 
+		meldezeitraumId="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_1}"
+		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_1}"/>
+	</h:form>	
+	<p:separator/>
+	<h:form>	
+		<component:meldezeitraumGenerator 
+		greeting="Meldezeitgenerator" 
+		meldezeitraumId="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_2}"
+		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_2}"/>
+	</h:form>			
 			
 	</ui:define>
 	<ui:define name="footer">
-		<p:outputLabel value="I am the footer" />
 	</ui:define>
 </ui:composition>
 

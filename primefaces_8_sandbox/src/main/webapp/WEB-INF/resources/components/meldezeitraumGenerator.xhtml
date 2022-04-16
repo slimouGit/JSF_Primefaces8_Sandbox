@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- INTERFACE -->
+<cc:interface>
+	<cc:attribute name="greeting"></cc:attribute>
+	<cc:attribute name="meldezeitraumId"></cc:attribute>
+	<cc:attribute name="toggleDetailMeldezeitraumMethode" method-signature="java.lang.String action()"></cc:attribute>
+</cc:interface>
+
+<!-- IMPLEMENTATION -->
+<cc:implementation>
+	<ui:fragment>
+		<div class="grid-layout-meldezeitraumgenerator">
+			<p:panelGrid columns="4" layout="grid">
+				<h:column>
+					<h:outputLabel for="meldezeitraum" value="Meldezeitraum" />
+					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" rendered="#{not cc.attrs.meldezeitraumId}" >					
+						<h:graphicImage name="/images/arrow_up.svg" style="width:24px; margin-left: 10px;" />
+					</p:commandLink>
+					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" rendered="#{cc.attrs.meldezeitraumId}" >					
+						<h:graphicImage name="/images/arrow_down.svg" style="width:24px; margin-left: 10px;" />
+					</p:commandLink>
+				</h:column>
+				<h:column>
+					<p:inputText id="meldezeitraum" />
+				</h:column>
+				<h:column>4</h:column>
+				<h:column>5</h:column>
+			</p:panelGrid>
+		</div>
+	</ui:fragment>
+	<ui:fragment id="fragment-meldezeitraum-detail" rendered="#{cc.attrs.meldezeitraumId}">
+		<div class="meldezeitraum-detail">
+			<h4>
+				<p:outputLabel value="Detaillierte Eingabe Meldezeitraum" />
+			</h4>
+			<div class="grid-layout-meldezeitraumgenerator">
+				<p:panelGrid columns="4" layout="grid">
+					<h:column>
+						<p:outputLabel value="Meldezeitraum" />
+					</h:column>
+					<h:column>
+						<p:selectOneMenu
+							value="#{meldezeitraumGeneratorBean.meldeZeitraumPraefix}">
+							<f:selectItem itemLabel="Select One" itemValue="" />
+							<f:selectItems
+								value="#{meldezeitraumGeneratorBean.meldezeitraumPraefixListe}" />
+						</p:selectOneMenu>
+					</h:column>
+					<h:column>
+						4
+					</h:column>
+					<h:column>5</h:column>
+					<h:column>
+						<p:outputLabel value="Jahr" />
+					</h:column>
+					<h:column>
+						<p:spinner id="minMax" min="0" max="100" />
+					</h:column>
+					<h:column>4</h:column>
+					<h:column>5</h:column>
+					<h:column>
+						<p:outputLabel value="Zeitraum" />
+					</h:column>
+					<h:column>
+						<p:selectOneMenu
+							value="#{meldezeitraumGeneratorBean.meldeZeitraumSuffix}">
+							<f:selectItem itemLabel="Select One" itemValue="" />
+							<f:selectItems
+								value="#{meldezeitraumGeneratorBean.meldezeitraumModusMap}" />
+						</p:selectOneMenu>
+					</h:column>
+					<h:column>4</h:column>
+					<h:column>5</h:column>
+				</p:panelGrid>
+			</div>
+		</div>
+	</ui:fragment>
+
+	<ui:fragment>
+		<div class="grid-layout-meldezeitraumgenerator">
+			<p:panelGrid columns="4" layout="grid">
+				<h:column>
+					<h:outputLabel for="zeitraum-von" value="Zeitraum von:" />
+				</h:column>
+				<h:column>
+					<p:inputText id="zeitraum-von" />
+				</h:column>
+				<h:column>
+					<h:outputLabel for="zeitraum-bis" value="Zeitraum bis:" />
+				</h:column>
+				<h:column>
+					<p:inputText id="zeitraum-bis" />
+				</h:column>
+			</p:panelGrid>
+		</div>
+	</ui:fragment>
+</cc:implementation>
+
+</html>
