@@ -15,7 +15,8 @@ public class NavigationTargetService {
 				new NavigationTarget("validation", "Validation"),
 				new NavigationTarget("gridlayout", "Gridlayout"),
 				new NavigationTarget("datatable", "DataTable"),
-				new NavigationTarget("inputcomponent", "InputComponent")
+				new NavigationTarget("inputcomponent", "InputComponent"),
+				new NavigationTarget("meldezeitraum", "MeldezeitraumKomponente")
 				));
 	}
 
