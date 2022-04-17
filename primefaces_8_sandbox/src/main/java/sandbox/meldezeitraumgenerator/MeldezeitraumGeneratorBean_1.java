@@ -17,31 +17,10 @@ public class MeldezeitraumGeneratorBean_1 extends AbstractBean {
 	private List<String> meldezeitraumModusMap = new ArrayList<>();
 	private String meldeZeitraumPraefix;
 	private List<String> meldezeitraumPraefixListe = new ArrayList<>();
-	
-	
 	private String meldezeitraum;
 	private String meldezeitraumVon;
 	private String meldezeitraumBis;
-	public String getMeldezeitraum() {
-		return meldezeitraum;
-	}
-	public void setMeldezeitraum(String meldezeitraum) {
-		this.meldezeitraum = meldezeitraum;
-	}	
-	public String getMeldezeitraumVon() {
-		return meldezeitraumVon;
-	}
-	public void setMeldezeitraumVom(String meldezeitraumVon) {
-		this.meldezeitraumVon = meldezeitraumVon;
-	}
-	public String getMeldezeitraumBis() {
-		return meldezeitraumBis;
-	}
-	public void setMeldezeitraumBis(String meldezeitraumBis) {
-		this.meldezeitraumBis = meldezeitraumBis;
-	}
-	
-	
+	private boolean zeigeMeldezeitraumDetail;
 	
 	
 	
@@ -77,12 +56,37 @@ public class MeldezeitraumGeneratorBean_1 extends AbstractBean {
 			this.meldezeitraumBis = "";
 		}
 	}
-	
-	
-	private boolean zeigeMeldezeitraumDetail;	
+		
 	public void toggleMeldezeitraumDetail() {		
 		this.zeigeMeldezeitraumDetail ^= true;
 		System.out.println("Meldezeitraum T " + this.meldezeitraum);		
+	}
+	
+	public void selectQuartal() {
+		System.out.println("selectQuartal");
+		this.meldezeitraum = "0322";
+		this.meldezeitraumVon = "01.03.2022";
+		this.meldezeitraumBis = "31.03.2022";
+	}
+	
+	
+	public String getMeldezeitraum() {
+		return meldezeitraum;
+	}
+	public void setMeldezeitraum(String meldezeitraum) {
+		this.meldezeitraum = meldezeitraum;
+	}	
+	public String getMeldezeitraumVon() {
+		return meldezeitraumVon;
+	}
+	public void setMeldezeitraumVom(String meldezeitraumVon) {
+		this.meldezeitraumVon = meldezeitraumVon;
+	}
+	public String getMeldezeitraumBis() {
+		return meldezeitraumBis;
+	}
+	public void setMeldezeitraumBis(String meldezeitraumBis) {
+		this.meldezeitraumBis = meldezeitraumBis;
 	}
 	public boolean isZeigeMeldezeitraumDetail() {
 		return zeigeMeldezeitraumDetail;

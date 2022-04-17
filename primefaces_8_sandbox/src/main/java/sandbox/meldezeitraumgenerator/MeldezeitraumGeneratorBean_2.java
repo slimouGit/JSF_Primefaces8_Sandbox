@@ -78,6 +78,12 @@ public class MeldezeitraumGeneratorBean_2 extends AbstractBean {
 		}
 	}
 	
+	public void selectQuartal() {
+		System.out.println("selectQuartal");
+		this.meldezeitraum = "0322";
+		this.meldezeitraumVon = "01.03.2022";
+		this.meldezeitraumBis = "31.03.2022";
+	}
 	
 	private boolean zeigeMeldezeitraumDetail;	
 	public void toggleMeldezeitraumDetail() {		

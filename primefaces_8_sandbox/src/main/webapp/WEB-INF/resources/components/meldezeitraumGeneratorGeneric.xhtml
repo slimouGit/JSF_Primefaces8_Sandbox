@@ -17,32 +17,50 @@
 
 <!-- IMPLEMENTATION -->
 <cc:implementation>
+
+
+
 	<ui:fragment>
 		<div class="grid-layout-meldezeitraumgenerator">
 			<p:panelGrid columns="4" layout="grid">
 				<h:column>
-					<h:outputLabel for="#{cc.attrs.meldezeitraumEingabeId}" value="Meldezeitraum" />
-					<p:commandLink action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}" update="@form" process="@this" rendered="#{not cc.attrs.pageBean.zeigeMeldezeitraumDetail}" >					
-						<h:graphicImage name="/images/arrow_up.svg" style="width:24px; margin-left: 10px;" />
+					<h:outputLabel for="meldezeitraumEingabeId" value="Meldezeitraum*" />
+					<p:commandLink
+						action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}"
+						update="@form" process="@this" required="true"
+						rendered="#{not cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
+						<h:graphicImage name="/images/arrow_up.svg"
+							style="width:24px; margin-left: 10px;" />
 					</p:commandLink>
-					<p:commandLink action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}" update="@form" process="@this" rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}" >					
-						<h:graphicImage name="/images/arrow_down.svg" style="width:24px; margin-left: 10px;" />
+					<p:commandLink
+						action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}"
+						update="@form" process="@this"
+						rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
+						<h:graphicImage name="/images/arrow_down.svg"
+							style="width:24px; margin-left: 10px;" />
 					</p:commandLink>
 				</h:column>
 				<h:column>
-					<p:inputText id="#{cc.attrs.meldezeitraumEingabeId}" disabled="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}" value="#{cc.attrs.pageBean.meldezeitraum}">
-						<p:ajax event="change" update="@form" process="@this" listener="#{cc.attrs.pageBean.setzeMeldezeitraum}"></p:ajax>
+					<p:inputText id="meldezeitraumEingabeId"
+						disabled="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}"
+						value="#{cc.attrs.pageBean.meldezeitraum}">
+						<p:ajax event="change" update="@form" process="@this"
+							listener="#{cc.attrs.pageBean.setzeMeldezeitraum}"></p:ajax>
 					</p:inputText>
 				</h:column>
 				<h:column>
-			
+
 				</h:column>
 				<h:column>
 				</h:column>
 			</p:panelGrid>
 		</div>
 	</ui:fragment>
-	<ui:fragment id="#{cc.attrs.meldezeitraumDetailAnsichtId}" rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
+
+
+
+	<ui:fragment id="meldezeitraumDetailAnsichtId"
+		rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
 		<div class="meldezeitraum-detail">
 			<h4>
 				<p:outputLabel value="Detaillierte Eingabe Meldezeitraum" />
@@ -50,25 +68,24 @@
 			<div class="grid-layout-meldezeitraumgenerator">
 				<p:panelGrid columns="4" layout="grid">
 					<h:column>
-						<p:outputLabel value="Meldezeitraum" />
+						<p:outputLabel value="Meldezeitraum*" />
 					</h:column>
-					<h:column >
-						<p:selectOneMenu 
-							value="#{cc.attrs.pageBean.meldeZeitraumPraefix}">
-							<f:selectItem itemLabel="Select One" itemValue="" />
+					<h:column>
+						<p:selectOneMenu value="#{cc.attrs.pageBean.meldeZeitraumPraefix}">
+							<f:selectItem itemLabel="" itemValue="" />
 							<f:selectItems
 								value="#{cc.attrs.pageBean.meldezeitraumPraefixListe}" />
 						</p:selectOneMenu>
 					</h:column>
 					<h:column>
-						
+
 					</h:column>
 					<h:column></h:column>
 					<h:column>
 						<p:outputLabel value="Jahr" />
 					</h:column>
 					<h:column>
-						<p:spinner id="minMax" min="0" max="100" />
+						<p:spinner id="minMax" min="2002" max="2022" stepFactor="1" />
 					</h:column>
 					<h:column></h:column>
 					<h:column></h:column>
@@ -76,11 +93,11 @@
 						<p:outputLabel value="Zeitraum" />
 					</h:column>
 					<h:column>
-						<p:selectOneMenu
-							value="#{cc.attrs.pageBean.meldeZeitraumSuffix}">
-							<f:selectItem itemLabel="Select One" itemValue="" />
-							<f:selectItems
-								value="#{cc.attrs.pageBean.meldezeitraumModusMap}" />
+						<p:selectOneMenu value="#{cc.attrs.pageBean.meldeZeitraumSuffix}">
+							<f:selectItem itemLabel="" itemValue="" />
+							<p:ajax listener="#{cc.attrs.pageBean.selectQuartal}"
+								update="@form" process="@this" />
+							<f:selectItems value="#{cc.attrs.pageBean.meldezeitraumModusMap}" />
 						</p:selectOneMenu>
 					</h:column>
 					<h:column></h:column>
@@ -90,6 +107,8 @@
 		</div>
 	</ui:fragment>
 
+
+
 	<ui:fragment>
 		<div class="grid-layout-meldezeitraumgenerator">
 			<p:panelGrid columns="4" layout="grid">
@@ -97,17 +116,23 @@
 					<h:outputLabel for="zeitraumVonId" value="Zeitraum von:" />
 				</h:column>
 				<h:column>
-					<p:inputText id="zeitraumVonId" disabled="true" value="#{cc.attrs.pageBean.meldezeitraumVon}"/>
+					<p:inputText id="zeitraumVonId" disabled="true"
+						value="#{cc.attrs.pageBean.meldezeitraumVon}" />
 				</h:column>
 				<h:column>
 					<h:outputLabel for="zeitraumBisId" value="Zeitraum bis:" />
 				</h:column>
 				<h:column>
-					<p:inputText id="zeitraumBisId" disabled="true" value="#{cc.attrs.pageBean.meldezeitraumBis}"/>
+					<p:inputText id="zeitraumBisId" disabled="true"
+						value="#{cc.attrs.pageBean.meldezeitraumBis}" />
 				</h:column>
 			</p:panelGrid>
 		</div>
 	</ui:fragment>
+
+
+
+
 </cc:implementation>
 
 </html>
