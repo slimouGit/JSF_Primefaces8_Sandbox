@@ -16,30 +16,73 @@
 		<p:link outcome="home" value="Home" />
 	</ui:define>
 	<ui:define name="content">
-	<h:form>	
-		<component:meldezeitraumGenerator 
-		meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_1}"
-		meldezeitraumDetailAnsichtId="detailansicht1"
-		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_1}"
-		meldezeitraumEinhabeId="Eins"/>
 		
-	<p:separator/>
-		
-		<component:meldezeitraumGenerator 
-		meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_2}"
-		meldezeitraumDetailAnsichtId="detailansicht2"
-		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_2}"
-		meldezeitraumEinhabeId="Zwei"/>
-		
-		<p:separator/>
-		
-		<component:meldezeitraumGenerator 
-		meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_3}"
-		meldezeitraumDetailAnsichtId="detailansicht3"
-		toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_3}"
-		meldezeitraumEinhabeId="Drei"/>
-	</h:form>			
+		<h:form>
+			<h4>
+				<p:outputLabel value="multiple beans with generic component" />
+			</h4>
 			
+			<component:meldezeitraumGeneratorGeneric
+				pageBean="#{meldezeitraumGeneratorBean_1}"
+				meldezeitraumDetailAnsichtId="detailansicht4"
+				meldezeitraumEingabeId="Vier"
+			/>
+			
+			<p:separator />
+			
+			<component:meldezeitraumGeneratorGeneric
+				pageBean="#{meldezeitraumGeneratorBean_2}"
+				meldezeitraumDetailAnsichtId="detailansicht5"
+				meldezeitraumEingabeId="Fünf"
+			/>
+		</h:form>
+		
+		<p:separator />
+		
+		<h:form>
+			<h4>
+				<p:outputLabel value="Only one bean" />
+			</h4>
+			<component:meldezeitraumGenerator
+				pageBean="#{meldezeitraumGeneratorBean}"
+				meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_1}"
+				meldezeitraumDetailAnsichtId="detailansicht1"
+				toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_1}"
+				meldezeitraumEingabeId="Eins"
+				meldezeitraumEingabeValue="#{meldezeitraumGeneratorBean.meldezeitraum1}"
+				meldezeitraumZeitraumVonValue="#{meldezeitraumGeneratorBean.meldezeitraumVon1}"
+				meldezeitraumZeitraumBisValue="#{meldezeitraumGeneratorBean.meldezeitraumBis1}" />
+
+			<p:separator />
+
+			<component:meldezeitraumGenerator
+				pageBean="#{meldezeitraumGeneratorBean}"
+				meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_2}"
+				meldezeitraumDetailAnsichtId="detailansicht2"
+				toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_2}"
+				meldezeitraumEingabeId="Zwei"
+				meldezeitraumEingabeValue="#{meldezeitraumGeneratorBean.meldezeitraum2}"
+				meldezeitraumZeitraumVonValue="#{meldezeitraumGeneratorBean.meldezeitraumVon2}"
+				meldezeitraumZeitraumBisValue="#{meldezeitraumGeneratorBean.meldezeitraumBis2}" />
+
+			<p:separator />
+
+			<component:meldezeitraumGenerator
+				pageBean="#{meldezeitraumGeneratorBean}"
+				meldezeitraumDetailAnsicht="#{meldezeitraumGeneratorBean.zeigeMeldezeitraumDetail_3}"
+				meldezeitraumDetailAnsichtId="detailansicht3"
+				toggleDetailMeldezeitraumMethode="#{meldezeitraumGeneratorBean.toggleMeldezeitraumDetail_3}"
+				meldezeitraumEingabeId="Drei"
+				meldezeitraumEingabeValue="#{meldezeitraumGeneratorBean.meldezeitraum3}"
+				meldezeitraumZeitraumVonValue="#{meldezeitraumGeneratorBean.meldezeitraumVon3}"
+				meldezeitraumZeitraumBisValue="#{meldezeitraumGeneratorBean.meldezeitraumBis3}" />
+
+		</h:form>
+		
+		
+		
+		
+
 	</ui:define>
 	<ui:define name="footer">
 	</ui:define>

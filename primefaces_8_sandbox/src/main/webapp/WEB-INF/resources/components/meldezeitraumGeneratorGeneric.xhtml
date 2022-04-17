@@ -11,14 +11,8 @@
 <!-- INTERFACE -->
 <cc:interface>
 	<cc:attribute name="pageBean"></cc:attribute>
-	<cc:attribute name="meldezeitraumDetailAnsicht"></cc:attribute>
 	<cc:attribute name="meldezeitraumDetailAnsichtId"></cc:attribute>
 	<cc:attribute name="meldezeitraumEingabeId"></cc:attribute>
-	<cc:attribute name="meldezeitraumEingabeValue"></cc:attribute>
-	<cc:attribute name="meldezeitraumZeitraumVonValue"></cc:attribute>
-	<cc:attribute name="meldezeitraumZeitraumBisValue"></cc:attribute>
-	<cc:attribute name="updateAfterToggle"></cc:attribute>
-	<cc:attribute name="toggleDetailMeldezeitraumMethode" method-signature="java.lang.String action()"></cc:attribute>
 </cc:interface>
 
 <!-- IMPLEMENTATION -->
@@ -28,15 +22,15 @@
 			<p:panelGrid columns="4" layout="grid">
 				<h:column>
 					<h:outputLabel for="#{cc.attrs.meldezeitraumEingabeId}" value="Meldezeitraum" />
-					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" process="@this" rendered="#{not cc.attrs.meldezeitraumDetailAnsicht}" >					
+					<p:commandLink action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}" update="@form" process="@this" rendered="#{not cc.attrs.pageBean.zeigeMeldezeitraumDetail}" >					
 						<h:graphicImage name="/images/arrow_up.svg" style="width:24px; margin-left: 10px;" />
 					</p:commandLink>
-					<p:commandLink action="#{cc.attrs.toggleDetailMeldezeitraumMethode}" update="@form" process="@this" rendered="#{cc.attrs.meldezeitraumDetailAnsicht}" >					
+					<p:commandLink action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}" update="@form" process="@this" rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}" >					
 						<h:graphicImage name="/images/arrow_down.svg" style="width:24px; margin-left: 10px;" />
 					</p:commandLink>
 				</h:column>
 				<h:column>
-					<p:inputText id="#{cc.attrs.meldezeitraumEingabeId}" disabled="#{cc.attrs.meldezeitraumDetailAnsicht}" value="#{cc.attrs.meldezeitraumEingabeValue}">
+					<p:inputText id="#{cc.attrs.meldezeitraumEingabeId}" disabled="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}" value="#{cc.attrs.pageBean.meldezeitraum}">
 						<p:ajax event="change" update="@form" process="@this" listener="#{cc.attrs.pageBean.setzeMeldezeitraum}"></p:ajax>
 					</p:inputText>
 				</h:column>
@@ -48,7 +42,7 @@
 			</p:panelGrid>
 		</div>
 	</ui:fragment>
-	<ui:fragment id="#{cc.attrs.meldezeitraumDetailAnsichtId}" rendered="#{cc.attrs.meldezeitraumDetailAnsicht}">
+	<ui:fragment id="#{cc.attrs.meldezeitraumDetailAnsichtId}" rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
 		<div class="meldezeitraum-detail">
 			<h4>
 				<p:outputLabel value="Detaillierte Eingabe Meldezeitraum" />
@@ -103,13 +97,13 @@
 					<h:outputLabel for="zeitraumVonId" value="Zeitraum von:" />
 				</h:column>
 				<h:column>
-					<p:inputText id="zeitraumVonId" disabled="true" value="#{cc.attrs.meldezeitraumZeitraumVonValue}"/>
+					<p:inputText id="zeitraumVonId" disabled="true" value="#{cc.attrs.pageBean.meldezeitraumVon}"/>
 				</h:column>
 				<h:column>
 					<h:outputLabel for="zeitraumBisId" value="Zeitraum bis:" />
 				</h:column>
 				<h:column>
-					<p:inputText id="zeitraumBisId" disabled="true" value="#{cc.attrs.meldezeitraumZeitraumBisValue}"/>
+					<p:inputText id="zeitraumBisId" disabled="true" value="#{cc.attrs.pageBean.meldezeitraumBis}"/>
 				</h:column>
 			</p:panelGrid>
 		</div>

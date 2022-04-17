@@ -11,22 +11,22 @@
 }
 
 .grid-layout-meldezeitraumgenerator .ui-g div:nth-child(1) {
-	width: 150px;
-	margin: 5px 0;
+	width: 170px;
+	margin-bottom: 5px;
 }
 
 .grid-layout-meldezeitraumgenerator .ui-g div:nth-child(2) {
 	width: 250px;
-	margin: 5px 0;
+	margin-bottom: 5px;
 }
 
 .grid-layout-meldezeitraumgenerator .ui-g div:nth-child(3) {
 	width: 120px;
-	margin: 5px 0;
+	margin-bottom: 5px;
 }
 
 .grid-layout-meldezeitraumgenerator .ui-g div:nth-child(4) {
-	margin: 5px 0;
+	margin-bottom: 5px;
 }
 
 .meldezeitraum-detail {
