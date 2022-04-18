@@ -29,15 +29,14 @@
 						action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}"
 						update="@form" process="@this" required="true"
 						rendered="#{not cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
-						<h:graphicImage name="/images/arrow_up.svg"
-							style="width:24px; margin-left: 10px;" />
+						<h:graphicImage name="/images/arrow_up.svg" class="arrow" />
 					</p:commandLink>
 					<p:commandLink
 						action="#{cc.attrs.pageBean.toggleMeldezeitraumDetail}"
 						update="@form" process="@this"
 						rendered="#{cc.attrs.pageBean.zeigeMeldezeitraumDetail}">
-						<h:graphicImage name="/images/arrow_down.svg"
-							style="width:24px; margin-left: 10px;" />
+						<h:graphicImage name="/images/arrow_up.svg"
+							class="arrow rotate180" />
 					</p:commandLink>
 				</h:column>
 				<h:column>
@@ -71,21 +70,25 @@
 						<p:outputLabel value="Meldezeitraum*" />
 					</h:column>
 					<h:column>
-						<p:selectOneMenu value="#{cc.attrs.pageBean.meldeZeitraumPraefix}">
+						<p:selectOneMenu value="#{cc.attrs.pageBean.meldeZeitraumPraefix}"
+							style="margin-bottom: 0px;">
 							<f:selectItem itemLabel="" itemValue="" />
+							<p:ajax listener="#{cc.attrs.pageBean.selectQuartal}"
+								update="@form" process="@this" />
 							<f:selectItems
 								value="#{cc.attrs.pageBean.meldezeitraumPraefixListe}" />
 						</p:selectOneMenu>
 					</h:column>
-					<h:column>
-
-					</h:column>
+					<h:column></h:column>
 					<h:column></h:column>
 					<h:column>
 						<p:outputLabel value="Jahr" />
 					</h:column>
 					<h:column>
-						<p:spinner id="minMax" min="2002" max="2022" stepFactor="1" />
+						<p:spinner id="minMax" min="2002" max="2022" stepFactor="1">
+							<p:ajax listener="#{cc.attrs.pageBean.selectQuartal}"
+								update="@form" process="@this" />
+						</p:spinner>
 					</h:column>
 					<h:column></h:column>
 					<h:column></h:column>
